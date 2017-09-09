@@ -27,6 +27,7 @@ if token:
         is_playing = result["is_playing"]
         print(is_playing)
         if not is_playing:
+            pass
             # return blank image
         track_id = result["item"]["id"]
         artist_href = result["item"]["artists"][0]["href"]
