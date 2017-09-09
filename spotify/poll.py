@@ -25,10 +25,8 @@ if token:
         sp = MySpotify(auth=token)
         result = sp.currently_playing_track()
         is_playing = result["is_playing"]
-        print(is_playing)
         if not is_playing:
-            pass
-            # return blank image
+            continue
         track_id = result["item"]["id"]
         if track_id != last_id:
             artist_href = result["item"]["artists"][0]["href"]
