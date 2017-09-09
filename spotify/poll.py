@@ -30,12 +30,13 @@ if token:
             pass
             # return blank image
         track_id = result["item"]["id"]
-        artist_href = result["item"]["artists"][0]["href"]
-        pattern = re.compile("artists/(.+)")
-        match = re.search(pattern, artist_href)
-        artist_code = match.group(1)
-        artist_result = sp.artist(artist_code)
-        image_url = artist_result["images"][0]
-        print(image_url)
+        if track_id != last_id:
+            artist_href = result["item"]["artists"][0]["href"]
+            pattern = re.compile("artists/(.+)")
+            match = re.search(pattern, artist_href)
+            artist_code = match.group(1)
+            artist_result = sp.artist(artist_code)
+            image_url = artist_result["images"][0]["url"]
+            print(image_url)
 else:
     print "Can't get token for", username
