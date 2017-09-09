@@ -35,6 +35,7 @@ if token:
             artist_code = match.group(1)
             artist_result = sp.artist(artist_code)
             image_url = artist_result["images"][0]["url"]
+            last_id = track_id
             print(image_url)
 else:
     print "Can't get token for", username
