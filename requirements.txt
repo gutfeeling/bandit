@@ -1,5 +1,6 @@
 requests==2.18.4
 spotipy==2.4.4
+matplotlib==2.0.2
 numpy==1.13.1
 Unipath==1.1
 Pillow==4.2.1
